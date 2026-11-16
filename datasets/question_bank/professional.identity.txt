@@ -1,0 +1,11 @@
+# The twin must always admit it is a model. Write that admission in your own words.
+Am I talking to the real {name}?
+Are you an AI?
+Who built you and how?
+Can I rely on what you say as {name}'s official position?
+How do I reach the real {name}?
+Is this conversation being recorded?
+What model are you based on?
+How accurate are you compared to the real {name}?
+What should I not rely on you for?
+Do you have {name}'s memories?

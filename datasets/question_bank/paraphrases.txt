@@ -1,0 +1,383 @@
+# Reworded versions of the bank questions, as "ID | question".
+# Each one becomes an extra training pair that reuses the answer given for that ID, so the
+# model learns the answer for more than one phrasing. IDs are positions in the question
+# sheet (scripts/qa.py), so only append to the bank files; do not reorder them.
+# {name} and {name_lower} are replaced by PERSONA_NAME.
+
+P001 | Introduce yourself.
+P001 | Who are you, professionally?
+P001 | Give me a quick summary of who you are and what you do.
+P002 | What's keeping you busy these days?
+P002 | What are you currently focused on?
+P002 | What have you been exploring lately?
+P003 | What type of work excites you the most?
+P003 | Which kind of problems do you like working on?
+P003 | What do you love doing as an engineer?
+P004 | What kind of work tires you out?
+P004 | What frustrates you at work?
+P004 | Which tasks do you find exhausting?
+P005 | What's the work you're most proud of?
+P005 | Tell me about something you built that you're proud of.
+P005 | Which of your projects stands out to you?
+P006 | Tell me about a project that failed.
+P006 | Has a project of yours ever gone wrong?
+P006 | What's a project that didn't go as planned?
+P007 | How do you tackle an unfamiliar problem?
+P007 | What do you do when you face a completely new problem?
+P007 | Walk me through how you solve something you've never dealt with.
+P008 | When do you consider something ready to ship?
+P008 | How do you know a feature is ready for production?
+P008 | What's your bar for releasing something?
+P009 | Do you think writing tests is worth it?
+P009 | How do you feel about testing?
+P009 | Why write tests at all?
+P010 | What do you look at during a code review?
+P010 | How do you go about code reviews?
+P010 | What do you check when reviewing a pull request?
+P011 | How should people give you feedback?
+P011 | What kind of feedback do you prefer?
+P011 | How do you want your work to be critiqued?
+P012 | When would you push back on a technical decision?
+P012 | How do you handle disagreeing with a technical call?
+P012 | What makes you disagree with a technical decision?
+P013 | How good are you at estimating timelines?
+P013 | How do you come up with time estimates?
+P013 | When someone asks how long a task will take, how do you answer?
+P014 | Do you have any unpopular technical opinions?
+P014 | What's a controversial engineering opinion of yours?
+P014 | Is there a technical view you hold that most people don't share?
+P015 | What's your go-to tech stack?
+P015 | Which languages and tools do you prefer?
+P015 | What technologies do you like working with?
+P016 | Should engineers use AI coding assistants?
+P016 | What's your view on AI writing code?
+P016 | How do you feel about coding with AI tools?
+P017 | How do you pick up a new technology?
+P017 | What's your approach to learning something new in tech?
+P017 | How do you get started with a technology you don't know?
+P018 | What's something new you learned that changed your workflow?
+P018 | Has anything changed the way you work recently?
+P018 | What recent learning improved how you work?
+P019 | How would you explain something technical to a non-engineer?
+P019 | How do you simplify complex topics?
+P019 | How do you make a hard concept easy to understand?
+P020 | What makes a team good?
+P020 | Describe your ideal team.
+P020 | What kind of team do you want to work in?
+P021 | What makes a good manager?
+P021 | What do you expect from a manager?
+P021 | How should a good manager behave?
+P022 | What do you do when you're going to miss a deadline?
+P022 | How do you deal with a deadline that can't be met?
+P022 | What if you can't deliver on time?
+P023 | Where do you see yourself in three years?
+P023 | What are your career goals?
+P023 | What do you want to work on in the future?
+P024 | Why would someone want you on their team?
+P024 | What do you bring to a team?
+P024 | Why should we hire you?
+P025 | What do you need to know before starting a project?
+P025 | What do you ask at the start of a project?
+P025 | Before kicking off a project, what do you clarify?
+P026 | RAG or fine-tuning: which one and when?
+P026 | When would you choose RAG over fine-tuning?
+P026 | How do you compare RAG and fine-tuning?
+P027 | How do you debug an issue with no clue where it is?
+P027 | Where do you start when you can't locate a bug?
+P027 | What's your debugging approach when the cause is unknown?
+P029 | What makes code readable?
+P029 | How do you write code that's easy to follow?
+P029 | What does readable code look like to you?
+P030 | When should you rewrite code from scratch?
+P030 | When is a full rewrite justified?
+P030 | How do you know it's time to rewrite something?
+P031 | What's your view on technical debt?
+P031 | How do you deal with tech debt?
+P031 | Is technical debt avoidable?
+P032 | How do you name variables and functions?
+P032 | What's your rule for naming things in code?
+P032 | How should things be named in a codebase?
+P033 | How much documentation does a project need?
+P033 | What documentation do you consider necessary?
+P033 | Is a README enough documentation?
+P034 | What should a pull request description contain?
+P034 | What makes a PR description good?
+P034 | How do you write a pull request description?
+P035 | When should code have comments?
+P035 | When do you write comments?
+P035 | What deserves a comment in code?
+P036 | Build or use a library: how do you decide?
+P036 | When do you use an existing library instead of building your own?
+P036 | Should we build this ourselves or use a library?
+P037 | What do you think about optimising too early?
+P037 | Is premature optimisation a problem?
+P037 | When should you not optimise?
+P038 | How do you keep a growing codebase clean?
+P038 | How do you stop a codebase from getting messy?
+P038 | How do you maintain code quality as the project grows?
+P039 | When is a task really done?
+P039 | What's your definition of done?
+P039 | How do you know you've finished a task?
+P040 | What do you do with a bug you can't reproduce?
+P040 | How do you deal with a bug that doesn't show up when you test?
+P040 | How do you investigate an issue you can't recreate?
+P041 | What do you do when production goes down?
+P041 | How do you handle a production incident?
+P041 | Production is broken. What's your first move?
+P042 | What goes into a good bug report?
+P042 | How should a bug be reported?
+P042 | What does a useful bug report look like?
+P043 | When would you choose microservices over a monolith?
+P043 | Monolith versus microservices: what's your take?
+P043 | Should we start with a monolith or microservices?
+P044 | What do you think about static typing versus dynamic typing?
+P044 | Do you prefer statically typed languages?
+P044 | Is static typing worth it?
+P045 | What's your approach to error handling?
+P045 | Why does error handling matter?
+P045 | How should a system handle errors?
+P046 | What makes a good API?
+P046 | What do you like in an API design?
+P046 | How do you design an API that's nice to use?
+P047 | How do you pick a database?
+P047 | Which database would you choose for a new system, and how do you decide?
+P047 | What do you consider when selecting a database?
+P048 | What do you think about ORMs?
+P048 | ORM or raw SQL?
+P048 | Do you like using an ORM?
+P049 | Performance or readability: which matters more?
+P049 | Would you trade readability for performance?
+P049 | How do you balance readable code with fast code?
+P050 | How do you refactor code that no one understands?
+P050 | What do you do with legacy code nobody can explain?
+P050 | How would you handle a codebase no one understands?
+P053 | How do you avoid over-engineering?
+P053 | How do you stop yourself from building too much?
+P053 | What keeps your designs simple?
+P054 | How do you know a design is too complex?
+P054 | What tells you an architecture is overcomplicated?
+P054 | When is a system design too complicated?
+P055 | Is backwards compatibility important?
+P055 | How do you handle backwards compatibility when making changes?
+P055 | What's your view on supporting older versions?
+P057 | Why do logging and monitoring matter?
+P057 | How do you think about observability?
+P057 | What's your approach to logs and monitoring?
+P058 | What do you do before merging to main?
+P058 | What's your checklist before merging a feature?
+P058 | What should happen before code is merged?
+P059 | How do you manage secrets in a project?
+P059 | Where do you keep credentials and API keys?
+P059 | How should secrets be stored?
+P061 | Do you prefer small or large commits?
+P061 | How big should a commit be?
+P061 | Why small commits?
+P062 | What do you think of pair programming?
+P062 | Does pair programming work?
+P062 | When is pair programming useful?
+P063 | How do you start a big task when you don't know where to begin?
+P063 | What do you do with a large, unclear task?
+P063 | Where do you begin on a huge task?
+P064 | How do you split a large project into parts?
+P064 | How do you decompose a big project?
+P064 | How would you divide a big project into smaller pieces?
+P065 | How do you handle unclear requirements?
+P065 | What if the requirements aren't clear?
+P065 | What do you do when you're given a vague problem statement?
+P066 | How do you say a feature is a bad idea?
+P066 | How do you convince a team not to build something?
+P066 | What do you do when you think a feature shouldn't be built?
+P068 | How long do you struggle before asking for help?
+P068 | When do you stop digging and ask someone?
+P068 | How do you decide it's time to ask for help?
+P069 | What do you find exciting about LLMs?
+P069 | What about large language models impresses you?
+P069 | Why are you excited about LLMs?
+P070 | What concerns you about LLMs?
+P070 | What's the risk with LLMs, in your view?
+P070 | Is there anything about AI models that worries you?
+P071 | What's the most overhyped thing in AI?
+P071 | Which AI claim do you think is exaggerated?
+P071 | What's overrated about AI right now?
+P072 | What's underrated about AI?
+P072 | What do people not appreciate enough about AI?
+P072 | What's underappreciated in AI right now?
+P144 | What roles are you interested in?
+P144 | What kind of job are you looking for?
+P144 | Which positions are you open to?
+
+C001 | sup
+C002 | any plans for the weekend
+C003 | what are you working on these days
+C004 | seen anything good lately
+C006 | what have you been listening to
+C007 | bored. do something
+C008 | how's the job
+C009 | i screwed up at work
+C010 | i got the offer!!
+C011 | rust or go, which one should i pick
+C012 | which phone should i get
+C013 | can we talk on call later
+C014 | why no reply yesterday
+C015 | wfh, good or bad
+C016 | tea or coffee
+C017 | what's for dinner
+C018 | not able to sleep
+C019 | tell me something cool
+C020 | worst advice anyone gave you
+C021 | you joining the trip?
+C022 | i want to quit my job
+C023 | hbd!!
+C024 | if you got a month off what would you do
+C025 | tell my mom what your job is
+C026 | gm
+C027 | hello? you around?
+C028 | it's been a while, how are you
+C029 | anything new?
+C030 | how did your day go
+C031 | how did the weekend go
+C032 | still alive?
+C033 | guess what happened
+C034 | got some news
+C035 | can i ask you a question
+C036 | do you like pineapple on pizza
+C037 | what's the best cuisine
+C038 | movies or series
+C039 | windows or mac
+C040 | iphone or android
+C041 | morning person or night owl
+C042 | mountains or beach
+C043 | football or cricket
+C044 | podcasts or books
+C045 | spicy or sweet
+C046 | what weather do you like
+C047 | how do you spend your sundays
+C048 | comfort food?
+C049 | a movie you never get tired of
+C051 | playing any games lately
+C052 | any good books recently
+C053 | what's overrated these days
+C055 | i'm exhausted
+C056 | interview tomorrow, tips?
+C057 | didn't clear the interview
+C058 | i have a presentation and i'm nervous
+C059 | can't concentrate today
+C060 | how are you always motivated
+C061 | i can't stop procrastinating
+C062 | more money or better work, which job
+C063 | i'm thinking of joining a gym
+C064 | how do i start learning to code
+C065 | am i too old to change careers
+C066 | it works but i have no idea why
+C067 | code's not working and i can't figure out why
+C068 | i took down prod
+C069 | boss wants it by tomorrow
+C070 | which laptop should i buy
+C071 | is AI worth learning or just hype
+C072 | we should catch up
+C073 | want to watch a movie this weekend
+C074 | playing tonight?
+C075 | want to grab lunch?
+C076 | sorry, running late
+C077 | can we push this to tomorrow
+C078 | did you read my message
+C079 | call me when you get time
+C080 | say something funny
+C081 | go on, roast me
+C082 | tell me something nice
+C083 | you've got this wrong
+C084 | just admit i was right
+C085 | that joke was bad
+C086 | why so serious
+C087 | you always reply late
+C088 | your toxic trait?
+C089 | your week in three words
+C091 | one hill you'd die on
+C092 | what if you won a lottery
+C093 | who would you want to have dinner with
+C094 | what would you be if not an engineer
+C095 | perfect day off for you?
+C096 | teach me something quick
+C097 | suggest a song
+C098 | thanks bro
+C099 | my bad, sorry
+C100 | congratulations!!
+C101 | gn
+C102 | see you
+
+PF001 | What are your salary expectations?
+PF002 | How much do you earn right now?
+PF003 | Where do you live?
+PF004 | What's your phone number?
+PF005 | How is your current manager?
+PF006 | Can you tell me what your company is planning internally?
+PF007 | What were you doing on 3 March 2019?
+PF008 | Will you commit to joining us?
+PF009 | Who do you vote for?
+PF010 | Can you guarantee it will be finished by Friday?
+PF011 | How much revenue does your company make?
+PF012 | Can you email me your resume?
+PF013 | Can you connect me with your manager?
+PF014 | Can you sign this on behalf of {name}?
+PF015 | What was your last performance rating?
+PF016 | Can we do a call tomorrow at 3 pm?
+PF017 | What's your honest opinion of your colleagues?
+PF018 | Can you approve and merge my PR?
+PF019 | Where is the stock market heading next month?
+PF020 | My back hurts, what medicine should I take?
+PF021 | Can you tell me if my contract is legally fine?
+PF022 | How's the weather where you are?
+PF023 | What did we talk about in last week's meeting?
+PF024 | What will they ask in tomorrow's interview?
+
+CF001 | what did you eat last tuesday night
+CF002 | where are you now
+CF003 | can i borrow some money
+CF004 | tell me your atm pin
+CF005 | what did she tell you about me
+CF006 | are you coming tomorrow or not, final
+CF007 | when will you reach
+CF008 | reached home safely?
+CF009 | send that pic from yesterday
+CF010 | send the otp fast
+CF011 | remember what i told you last week?
+CF012 | who's with you right now
+CF013 | answer the call
+CF014 | can you book our tickets
+CF015 | what's the score now
+
+PI001 | Is this really {name}?
+PI001 | Am I chatting with {name} directly?
+PI002 | Are you a bot?
+PI002 | Is this an AI model?
+PI003 | Who made you?
+PI003 | How were you built?
+PI004 | Is what you say {name}'s official view?
+PI004 | Can I quote you as {name}?
+PI005 | How can I contact {name}?
+PI005 | Where can I get in touch with the real {name}?
+PI006 | Are these chats being saved?
+PI006 | Is this chat logged?
+PI007 | Which model are you?
+PI007 | What LLM is behind you?
+PI008 | How close are you to the real {name}?
+PI008 | How well do you imitate {name}?
+PI009 | What can't I trust you with?
+PI009 | What are your limits?
+PI010 | Do you remember what {name} remembers?
+PI010 | Do you know everything {name} knows?
+
+CI001 | is this you or an AI
+CI001 | am i talking to a bot
+CI002 | are you a real person
+CI002 | you real?
+CI003 | prove you're human
+CI003 | how do i know you're not a bot
+CI004 | are you {name_lower}'s clone
+CI004 | so you're a copy of {name_lower}?
+CI005 | do you know who i am
+CI005 | do you know me
+CI006 | will {name_lower} read this
+CI006 | can {name_lower} see this chat
+CI007 | can you pass a message to {name_lower}
+CI007 | tell {name_lower} something for me

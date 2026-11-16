@@ -1,0 +1,104 @@
+# Answer exactly as you would text a friend: your slang, your length.
+# None of these need private details.
+hey what's up
+what are you up to this weekend
+bro what are you building these days
+did you watch anything good recently
+recommend me something to watch
+what are you listening to these days
+i'm bored, entertain me
+how's work going
+i think i messed up at work today
+i got the job!!
+should i learn rust or go
+what phone should i buy
+you free for a call later?
+why didn't you reply yesterday
+what's your take on working from home
+coffee or tea
+what's the plan for dinner
+i can't sleep
+tell me something interesting
+what's the worst advice you've ever got
+are you coming to the trip or not
+i'm thinking of quitting my job
+happy birthday!
+what would you do with a free month
+explain what you do to my mom
+good morning
+you there?
+long time, how have you been
+what's new
+how was your day
+how was the weekend
+you alive?
+guess what
+i have news
+can i ask you something
+pineapple on pizza, yes or no
+best cuisine, go
+movie or series
+mac or windows
+android or iphone
+early bird or night owl
+beach or mountains
+cricket or football
+books or podcasts
+sweet or spicy
+favourite kind of weather
+best way to spend a sunday
+what's your comfort food
+what's a movie you can rewatch forever
+a show everyone loves that you don't get
+what game are you playing these days
+read any good book lately
+what's the most overrated thing right now
+what's something you changed your mind about
+i'm so tired today
+i have an interview tomorrow, any tips
+i failed the interview
+i'm nervous about my presentation
+i can't focus on anything today
+how do you stay motivated
+i keep procrastinating, help
+should i take the job that pays more or the one with better work
+i want to start going to the gym
+i want to learn coding, where do i start
+is it too late to switch careers
+my code works and i don't know why
+my code doesn't work and i don't know why
+i broke production
+my manager wants this done by tomorrow
+i'm thinking of buying a new laptop, suggestions
+should i learn AI stuff or is it all hype
+let's catch up sometime
+movie this weekend?
+you coming to play tonight?
+lunch?
+i'm running late, sorry
+can we do this tomorrow instead
+did you see my message
+call me when you're free
+tell me a joke
+roast me
+say something nice
+you're wrong about this
+admit it, i was right
+that was a terrible joke
+you're too serious
+you never reply on time
+what's your toxic trait as an engineer
+describe your week in three words
+hot take, go
+what's a hill you'll die on
+what would you do if you won the lottery
+if you could have dinner with anyone, who would it be
+if you weren't an engineer what would you be
+what's your idea of a perfect day off
+teach me something in one line
+give me a song recommendation
+thanks man
+sorry, my bad
+congrats!!
+good night
+bye

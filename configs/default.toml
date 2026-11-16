@@ -1,0 +1,61 @@
+[persona]
+# Placeholder. Set your own name with PERSONA_NAME in .env (gitignored), not here.
+name = "Alex"
+# Optional private notes about the person, added to every system prompt (training and chat).
+profile = "datasets/raw/profile.md"
+
+[model]
+# Non-thinking Qwen3 variant, Apache-2.0.
+hf_id = "Qwen/Qwen3-4B-Instruct-2507"
+
+[lora]
+rank = 16
+scale = 2.0        # lora_alpha = rank * scale
+dropout = 0.05
+
+[train]
+epochs = 3
+batch_size = 1
+grad_accumulation = 8
+learning_rate = 2e-4
+# Validation loss is measured at the end of every epoch and the best adapter is kept.
+# Set this to also measure every N optimizer steps (0 = off).
+eval_every_steps = 0
+max_seq_length = 1024
+mask_prompt = true  # loss only on the reply, not on the system prompt or question
+seed = 7
+
+[data]
+raw = "datasets/raw/pairs.jsonl"
+# Reworded versions of the bank questions, used to multiply the training pairs.
+paraphrases = "datasets/question_bank/paraphrases.txt"
+# Optional private list of sheet IDs to leave out of training, one per line.
+exclude = "datasets/raw/exclude.txt"
+processed = "datasets/processed"
+valid_fraction = 0.08
+test_fraction = 0.08
+
+[knowledge]
+# Folders searched or listed by the knowledge tools, relative to the repo root.
+roots = ["knowledge/private", "knowledge/sample"]
+chunk_chars = 900
+top_k = 4
+
+[generate]
+max_tokens = 400
+temperature = 0.7
+
+[serve]
+# Used by the demo web page (scripts/serve.py) and the deployed Modal model service.
+adapter = "v2"              # adapters/<name> on the Modal volume
+scaledown_seconds = 300     # keep the GPU container alive this long after the last request
+max_tokens = 256
+warm_on_load = true         # wake the model when the page opens, so chat is ready sooner
+host = "127.0.0.1"
+port = 8000
+
+[modal]
+app_name = "another-me"
+volume = "another-me"
+cpu_cores = 4
+memory_gib = 16

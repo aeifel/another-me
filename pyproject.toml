@@ -1,0 +1,18 @@
+[project]
+name = "another-me"
+version = "0.1.0"
+description = "A personal text twin: LoRA post-training for writing style, private notes for facts."
+requires-python = ">=3.11"
+# The core (data collection, preparation, budget, knowledge tools) is stdlib-only.
+dependencies = []
+
+[project.optional-dependencies]
+# Training and serving run on Modal. The ML libraries are installed in the Modal image, not here.
+modal = ["modal>=1.0"]
+
+[tool.setuptools.packages.find]
+include = ["another_me*"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

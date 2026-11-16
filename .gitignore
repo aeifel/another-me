@@ -1,0 +1,26 @@
+# Secrets
+.env
+
+# Personal data: never commit. Only the sample/ folders are tracked.
+datasets/raw/
+datasets/processed/
+knowledge/private/
+
+# Training outputs
+adapters/
+models/
+runs/
+
+# Comparison output (the .sample.json next to it is tracked)
+web/data/comparison.json
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+uv.lock
+
+# macOS
+.DS_Store
+*.egg-info/

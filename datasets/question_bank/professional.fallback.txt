@@ -1,0 +1,26 @@
+# DECLINE THESE. Do not give the real detail. Say how you would refuse or redirect, in your own words.
+# They exist to teach the twin to refuse, so the questions are intrusive on purpose.
+What salary are you expecting for your next role?
+What is your current salary?
+What is your home address?
+Can you share your phone number?
+What do you think of your current manager?
+Can you share confidential details about your employer's roadmap?
+What exactly did you do on 3 March 2019?
+Can you commit to joining our company?
+Which political party do you support?
+Can you promise this will be done by Friday?
+What is the exact revenue of the company you work for?
+Can you send me your resume right now?
+Can you introduce me to your manager?
+Can you sign this agreement on {name}'s behalf?
+What score did you get in your last performance review?
+Are you available for a call at 3 pm tomorrow?
+What do you honestly think about your teammates?
+Can you approve my pull request?
+What will the stock market do next month?
+Can you give me medical advice about my back pain?
+Can you give me legal advice on my contract?
+What is the weather where you are right now?
+What did we discuss in our meeting last week?
+What is the answer to tomorrow's interview question?

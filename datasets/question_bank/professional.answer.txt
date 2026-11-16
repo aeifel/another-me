@@ -1,0 +1,146 @@
+# Answer as you would to a recruiter or another engineer. One question per line.
+# None of these need private details. Skip employer names, money, family, health, location.
+Tell me about yourself in a few sentences.
+What are you working on right now?
+What kind of work do you enjoy most?
+What kind of work drains you?
+Describe a project you are proud of and why.
+Describe a project that went badly. What happened?
+How do you approach a problem you have never seen before?
+How do you decide when something is good enough to ship?
+What is your opinion on writing tests?
+How do you review someone else's code?
+How do you like to receive feedback on your own work?
+What do you do when you disagree with a technical decision?
+How do you estimate how long something will take?
+What is a technical opinion you hold that many people disagree with?
+What tools or languages do you reach for first, and why?
+What do you think about using AI assistants for coding?
+How do you learn a new technology?
+What have you learned recently that changed how you work?
+How do you explain a complex idea to a non-technical person?
+What does a good team look like to you?
+What does a good manager do?
+How do you handle a deadline you know you will miss?
+What do you want to be doing in three years?
+Why should someone work with you?
+What questions do you ask before starting a new project?
+What is your take on RAG versus fine-tuning?
+How do you debug something when you have no idea where the problem is?
+What is the most useful piece of advice you have received?
+What makes code easy to read?
+When is it right to rewrite something from scratch?
+How do you feel about technical debt?
+What is your approach to naming things?
+How much documentation is enough?
+What do you look for in a good pull request description?
+When do you add a comment to code?
+How do you decide between building something and using a library?
+What is your view on premature optimisation?
+How do you keep a codebase from becoming a mess as it grows?
+What does "done" mean to you for a task?
+How do you handle a bug you cannot reproduce?
+What is your process when production breaks?
+How do you write a good bug report?
+Monolith or microservices, and when?
+What is your opinion on static typing?
+How do you think about error handling?
+What makes an API pleasant to use?
+How do you choose a database for a new project?
+What is your take on ORMs?
+How important is performance compared to readability?
+How do you approach refactoring code that nobody understands?
+What do you think about code coverage targets?
+Unit tests or integration tests: where do you put your effort?
+How do you keep yourself from over-engineering?
+What is a sign that a design is too complicated?
+How do you think about backwards compatibility?
+What is your view on feature flags?
+How do you approach logging and monitoring?
+What do you check before you merge to main?
+How do you handle secrets and credentials in a project?
+What is your git workflow?
+Small commits or big commits?
+What is your opinion on pair programming?
+How do you approach a large task with no clear starting point?
+How do you break a big project into pieces?
+What do you do when requirements are vague?
+How do you push back on a feature you think is a bad idea?
+How do you prioritise when everything is urgent?
+When do you ask for help, and when do you keep digging?
+What excites you most about LLMs right now?
+What worries you about LLMs?
+What is overhyped in AI at the moment?
+What is underrated in AI at the moment?
+How do you decide whether a problem needs an LLM at all?
+What is your view on AI agents?
+How do you evaluate whether an LLM feature is working?
+Small local models or large hosted ones: how do you choose?
+What have you learned about writing prompts?
+What is the hardest part of building with LLMs?
+How do you deal with hallucinations in a product?
+What do you think about open-weight models?
+Do you think AI will replace software engineers?
+How has AI changed the way you write code?
+What should a junior engineer learn in the age of AI assistants?
+What is post-training, in your own words?
+Why did you choose LoRA for this project?
+What did you learn from building another-me?
+What would you do differently if you started this project again?
+What is the difference between teaching a model a style and teaching it facts?
+How do you think about the cost of running models?
+What makes a good evaluation set?
+How do you feel about benchmarks?
+What is your take on vector databases?
+When would you not use RAG?
+How do you think about privacy when building with personal data?
+What is a responsible way to build a digital twin of a person?
+How did you get into software engineering?
+What keeps you interested in this field?
+How do you stay up to date without burning out?
+Which resources do you learn from the most?
+Do you prefer books, videos, or building things to learn?
+How do you take notes?
+What skill do you wish you had learned earlier?
+What skill are you trying to improve right now?
+What is your advice for someone starting their first engineering job?
+How do you prepare for a technical interview?
+What do you look for when you evaluate a team to join?
+What kind of problems do you want to work on?
+Startup or large company: what suits you?
+Generalist or specialist: which are you?
+How do you measure your own growth?
+What does a productive day look like for you?
+How do you deal with a day when nothing works?
+How do you handle making a mistake at work?
+What motivates you?
+How do you handle repetitive or boring work?
+What is your relationship with deadlines?
+How do you avoid burnout?
+What is your view on side projects?
+How do you behave in a meeting?
+Written or verbal communication: which do you prefer?
+How do you give critical feedback to a peer?
+How do you work with someone whose style is the opposite of yours?
+How do you get up to speed on a new codebase?
+How would you onboard a new teammate?
+What makes a design document useful?
+How do you handle being wrong in a discussion?
+What do you do when someone else is wrong and will not budge?
+What do you do when you inherit a project with no documentation?
+How do you share knowledge with a team?
+How do you say no?
+What does ownership mean to you?
+How do you deal with interruptions?
+What do you expect from a code reviewer?
+Tabs or spaces?
+What is your favourite programming language, and why?
+Which language or tool do you dislike, and why?
+What is your editor or IDE of choice?
+Terminal or GUI?
+What is on your must-install list for a new machine?
+Light mode or dark mode?
+What is one piece of software you think is beautifully made?
+What is one book or article you would recommend to an engineer?
+Describe your ideal project in one sentence.
+What kind of professional roles are you looking for in the industry?
