@@ -6,8 +6,8 @@ A text twin of yourself: a small open model that replies the way you write.
   question and answer pairs you write yourself.
 - **Facts** come from short private notes placed in the prompt.
 - **Honesty**: the twin is trained to say it is a model and to decline what it cannot do.
-- **Before and after**: a demo page puts the tuned model and the untouched base model
-  side by side.
+- **Before and after**: a demo page puts the twin next to the base model as downloaded,
+  with no training and no notes.
 
 Everything personal (your name, answers, notes, tokens, trained adapters) stays in
 gitignored files or in your own Modal account. The repository contains none of it.
@@ -157,8 +157,8 @@ automatically.
 | What runs where? | The browser talks only to `scripts/serve.py` on localhost. The server builds the prompt (name, profile notes, tone, the conversation) and calls the `Twin` service on Modal with your token. The token never reaches the browser. |
 | What is the `Twin` service? | One GPU container holding the base model with the adapter attached. It loads once and then answers requests. |
 | How does a new training run go live? | It does not by itself. The service loads the adapter named in `[serve] adapter` at deploy time. Change it and deploy again. |
-| How does the comparison work? | Sequentially on the same GPU and the same loaded model: first the reply with the adapter, then the reply with the adapter switched off, using the same random seed. One copy of the base weights serves both, so a comparison takes about twice as long as a chat reply. |
-| What does the base model see? | The same prompt as the tuned model, including the profile notes. The comparison shows the difference in writing style, not a difference in what the models were told. |
+| How does the comparison work? | Sequentially on the same GPU and the same loaded model: first the tuned reply, then the base reply with the adapter switched off, using the same random seed. One copy of the base weights serves both, so a comparison takes about twice as long as a chat reply. |
+| What does the base model see? | The same question and the same one-line instruction to answer as the person, but no profile notes. It answers as downloaded: no training on the person and nothing it was told about them. |
 | Does chat keep history? | Only in the browser tab. The server stores nothing. |
 
 The server is meant for one person on one machine: it listens on localhost only and sends
@@ -201,18 +201,18 @@ in 16-bit, LoRA rank 16 on 0.81% of the weights, 492 training examples of about 
 |---|---|
 | Cold start, request to ready | 22 to 25 s with a GPU available, up to 86 s when one had to be found |
 | Chat reply, model awake | under 1 s for a short reply, 4 to 9 s for a paragraph |
-| Comparison, both replies | 4 to 19 s |
+| Comparison, both replies | 7 to 16 s |
 
 | Held-out test questions (17) | Real answers | Tuned | Base model |
 |---|---|---|---|
-| Average reply length, all | 24 words | 9 words | 170 words |
-| Work questions | 47 words | 15 words | 222 words |
-| Casual questions | 3 words | 4 words | 124 words |
+| Average reply length, all | 24 words | 9 words | 111 words |
+| Work questions | 47 words | 15 words | 172 words |
+| Casual questions | 3 words | 4 words | 57 words |
 
 What to expect from a dataset of this size:
 
-- **Style transfers well.** The base model writes long, enthusiastic paragraphs with emoji.
-  The tuned model answers plainly and briefly, as the real answers do.
+- **Style transfers well.** The base model writes long, enthusiastic paragraphs with emoji
+  and invents a persona. The tuned model answers plainly and briefly, as the real answers do.
 - **Facts need the notes.** Without profile notes the tuned model answers questions about
   the person vaguely or wrongly. With them it answers correctly.
 - **More epochs memorise.** Validation loss was lowest within the first epoch. Lowering

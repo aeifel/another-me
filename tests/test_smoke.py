@@ -272,6 +272,17 @@ class ServerTests(unittest.TestCase):
         self.assertIn("friend", messages[0]["content"])
         self.assertEqual(len(messages[1]["content"]), self.serve.MAX_CHARS)
 
+    def test_base_model_prompt_has_no_profile_notes(self):
+        saved = self.serve.PROFILE
+        self.serve.PROFILE = "- a private fact"
+        try:
+            ask = {"messages": [{"role": "user", "content": "hi"}]}
+            self.assertIn("a private fact", self.serve.clean_messages(ask)[1][0]["content"])
+            self.assertNotIn("a private fact", self.serve.clean_messages(ask, notes=False)[1][0]["content"])
+            self.assertNotIn("What you know", self.serve.clean_messages(ask, notes=False)[1][0]["content"])
+        finally:
+            self.serve.PROFILE = saved
+
     def test_unknown_register_falls_back_and_empty_input_is_rejected(self):
         register, _ = self.serve.clean_messages({"register": "x", "messages": [{"role": "user", "content": "hi"}]})
         self.assertEqual(register, "professional")

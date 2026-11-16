@@ -147,7 +147,12 @@ def page_config() -> dict:
     return info
 
 
-def clean_messages(payload: dict) -> tuple[str, list[dict]]:
+def clean_messages(payload: dict, notes: bool = True) -> tuple[str, list[dict]]:
+    """Validate the conversation and put the system prompt in front.
+
+    notes=False leaves the profile notes out: that is what the base model gets in the
+    comparison, so it answers as downloaded, with nothing it was told about the person.
+    """
     register = payload.get("register")
     if register not in REGISTERS:
         register = "professional"
@@ -158,7 +163,8 @@ def clean_messages(payload: dict) -> tuple[str, list[dict]]:
             turns.append({"role": role, "content": content})
     if not turns or turns[-1]["role"] != "user":
         raise ValueError("The last message must be from the user.")
-    return register, [{"role": "system", "content": system_prompt(CFG["persona"]["name"], register, profile=PROFILE)}] + turns
+    system = system_prompt(CFG["persona"]["name"], register, profile=PROFILE if notes else "")
+    return register, [{"role": "system", "content": system}] + turns
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -197,10 +203,19 @@ class Handler(SimpleHTTPRequestHandler):
                 return self.send_json(MODEL.reply(messages, ["tuned"], int(time.time()) % 100000))
             if self.path == "/api/compare":
                 question = str(payload.get("question", "")).strip()
-                _, messages = clean_messages({"register": payload.get("register"),
-                                              "messages": [{"role": "user", "content": question}]})
-                # Same random seed for both arms, new on every request, as in chat.
-                return self.send_json(MODEL.reply(messages, ["tuned", "base"], int(time.time()) % 100000))
+                ask = {"register": payload.get("register"),
+                       "messages": [{"role": "user", "content": question}]}
+                # The tuned model answers as it does in chat. The base model gets the same
+                # question without the profile notes. Same random seed for both.
+                seed = int(time.time()) % 100000
+                tuned = MODEL.reply(clean_messages(ask)[1], ["tuned"], seed)
+                base = MODEL.reply(clean_messages(ask, notes=False)[1], ["base"], seed)
+                return self.send_json({
+                    "replies": {"tuned": tuned["replies"]["tuned"], "base": base["replies"]["base"]},
+                    "seconds": round(tuned["seconds"] + base["seconds"], 2),
+                    "total_seconds": round(tuned["total_seconds"] + base["total_seconds"], 2),
+                    "was_cold": tuned["was_cold"],
+                })
             return self.send_json({"error": "not found"}, 404)
         except ValueError as e:
             return self.send_json({"error": str(e)}, 400)

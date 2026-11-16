@@ -321,7 +321,8 @@ def generate(rows: list[dict], cfg: dict, run_name: str, arms: list[str],
              temperatures: list[float]) -> dict:
     """Reply to every prompt, once per arm and temperature, on one loaded model.
 
-    Each row is {"messages": [...]} ending with the user turn.
+    Each row is {"messages": [...]} ending with the user turn. A row may carry
+    "base_messages": what the base arm gets instead (the same turn without profile notes).
     Returns {"<temperature>": [{"tuned": ..., "base": ...}, ...]}.
     """
     tok, model = _load_tuned(cfg, run_name)
@@ -329,7 +330,9 @@ def generate(rows: list[dict], cfg: dict, run_name: str, arms: list[str],
     out = {}
     for temperature in temperatures:
         out[str(temperature)] = [
-            {arm: _reply(tok, model, row["messages"], arm, max_tokens, temperature,
+            {arm: _reply(tok, model,
+                         row.get("base_messages", row["messages"]) if arm == "base" else row["messages"],
+                         arm, max_tokens, temperature,
                          cfg["train"]["seed"] + i) for arm in arms}
             for i, row in enumerate(rows)
         ]
@@ -415,7 +418,15 @@ def main(action: str = "train", run_name: str = "v1", max_steps: int = 0, limit:
             raise SystemExit(f"datasets/processed/{split}.jsonl not found. Run scripts/prepare.py first.")
         if limit:
             held = held[:limit]
-        prompts = [{"messages": r["messages"][:-1]} for r in held]
+
+        def without_notes(messages: list[dict]) -> list[dict]:
+            # The system prompt is "<instruction>\n\nWhat you know about <name>: ..."
+            # (another_me/schema.py). The base model gets the instruction only.
+            system = messages[0]["content"].split("\n\nWhat you know about ")[0]
+            return [{"role": "system", "content": system}] + messages[1:]
+
+        prompts = [{"messages": r["messages"][:-1], "base_messages": without_notes(r["messages"][:-1])}
+                   for r in held]
         real = [r["messages"][-1]["content"] for r in held]
         work = ["friend" not in r["messages"][0]["content"] for r in held]
 
